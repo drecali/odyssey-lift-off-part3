@@ -4,6 +4,10 @@ const resolvers = {
     tracksForHome: (_, __, { dataSources }) => {
       return dataSources.trackAPI.getTracksForHome();
     },
+    // get a single track by id, for the Track page
+    track: (_, { id }, { dataSources }) => {
+      return dataSources.trackAPI.getTrack(id);
+    }
   },
   Track: {
     author: ({ authorId }, _, { dataSources }) => {
